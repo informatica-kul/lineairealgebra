@@ -1,0 +1,20 @@
+name: CI
+
+on: 
+  push:
+    paths:
+    - '**.tex'
+  pull_request:
+    paths:
+    - '**.tex'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Compile
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: lineaire_algebra_oplossingen.tex
+
