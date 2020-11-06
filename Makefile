@@ -5,4 +5,4 @@ all:
 %.pdf: %.tex
 	bash makepdf.sh $(INTERACTION) $<
 clean:
-	rm -f *.aux *.log *.bbl *.bak *.blg *.toc *.out *.glg *.glo *.gls *.ist *~ *.*~* *.backup *.synctex.gz *.dvi
+	rm -f *.aux *.log *.bak *.bbl *.bcf *.bit *.blg *.dvi *.toc *.out *.fdb_latexmk *.fls *.glg *.glo *.gls *.idx *.ilg *.ind *.ist *.lof *.lot *~ *.*~* *.backup *.synctex.gz
