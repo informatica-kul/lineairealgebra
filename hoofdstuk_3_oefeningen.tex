@@ -119,39 +119,7 @@ Neem $f, g \in W_{12}$ en $\lambda, \mu \in \mathbb{R}$ willekeurig. Omdat $f$ e
 \subsubsection*{jk}
 $W_{11}$
 
-
-\subsection{Oefening 3}% deze oplossing was fout, deze versie is juist
-\textit{Gegeven:}
-\[
-V = \left\{ (x_n)_{n \in \mathbb{N}} \ \middle|\ x_{n+2} = x_{n+1} + x_n \ ,\ \forall n \in \mathbb{N} \right\}
-\]
-\textit{Te bewijzen:}\\
-We moeten aantonen dat $V$ een vectorruimte is. Dit kunnen we het makkelijkst doen door te bewijzen dat $V$ een deelruimte is van alle rijen.
-\begin{proof}
-We gaan de 3 eigenschappen van een deelruimte na.
-\begin{itemize}
-\item $0 \in V$
-\item Zij $x = (x_n)_{n \in \mathbb{N}} \in V$ en $y = (y_n)_{n \in \mathbb{N}} \in V$. We controleren of $(x+y) \in V$.\\
-Voor alle $n \in \mathbb{N}$ geldt:
-\begin{align*}
-(x+y)_{n+2}
-&= x_{n+2} + y_{n+2} \\
-&= x_{n+1} + x_n + y_{n+1} + y_n \\
-&= (x_{n+1} + y_{n+1}) + (x_n + y_n) \\
-&= (x+y)_{n+1} + (x+y)_{n+1}
-\end{align*}
-\item Zij $x = (x_n)_{n \in \mathbb{N}} \in V$ en $\lambda \in \mathbb{R}$. We controleren of $\lambda x \in V$.\\
-Voor alle $n \in \mathbb{N}$ geldt:
-\begin{align*}
-(\lambda x)_{n+2}
-&= \lambda \cdot x_{n+2} \\
-&= \lambda \cdot x_{n+1} + \lambda \cdot x_n \\
-&= (\lambda x)_{n+1} + (\lambda x)_n
-\end{align*}
-\end{itemize}
-\end{proof}
-
-\subsection{Oefening 4}
+\subsection{Oefening 3}
 \underline{Associativiteit:} niet voldaan.\\
 Neem $n=2$ en willekeurige $v,w \in \mathbb{R}^n$ en een willekeurige $x \in \mathbb{R}^n\backslash\{0\}$.
 \begin{align*}
@@ -199,7 +167,7 @@ Zij $v = (1,0,\ldots,0)$.
 1 \cdot v = -v \neq v
 \]
 
-\subsection{Oefening 5}
+\subsection{Oefening 4}
 Nee, $W$ is geen deelruimte van $R[X]_{\le n}$ als $n\ge 1$. Tegenvoorbeeld:\\
 We defini\"eren $f \in W$ en $g \in W$ en tonen aan dat $(f+g) \not \in W$.
 \begin{align*}
@@ -208,7 +176,7 @@ We defini\"eren $f \in W$ en $g \in W$ en tonen aan dat $(f+g) \not \in W$.
 &f+g = x^n - x^n + 1 = 1
 \end{align*}
 
-\subsection{Oefening 6}
+\subsection{Oefening 5}
 \subsubsection*{Gegeven}
 $U$ en $W$ zijn deelruimten van een vectorruimte $(\mathbb{R},V,+)$.
 \subsubsection*{Te Bewijzen}
@@ -269,7 +237,7 @@ $$
 $$
 Dit is een ongeldige matrix en dus bestaat er geen lineaire combinatie zodat de vector $d$ gevormd wordt. De vector behoort dus niet tot de deelruimte.
 
-\subsection{Oefening 8}
+\subsection{Oefening 6}
 We willen $p(X)$ opschrijven als lineaire combinatie van $p_1(X)$, $p_2(X)$, $p_3(X)$, dus $p(X) = \lambda_1 p_1(X) + \lambda_2 p_2(X) + \lambda_2 p_3(X)$.
 Hiervoor lossen we het volgende stelsel op:
 \[
@@ -945,7 +913,7 @@ Dit is juist volgens de definitie van vectorsom en scalaire vermenigvuldiging.
 \subsubsection*{d)}
 $v_3 = (1,1)$
 
-\subsection{Oefening 28}
+\subsection{Oefening 31}
 \textit{Gegeven.}\\
 We defini\"eren  $v_i = (0,0,\ldots,0,0,1,0,0,\ldots)$ waarbij de 1 op de $i$-de plaats staat.
 \[
@@ -976,7 +944,7 @@ v_i \not \in \{f_1,f_2,\ldots,f_n\}
 Dus op plaats $i$ in $x$ zal een 0 komen waardoor je $(1,1,\ldots)$ niet kan vormen.
 \end{proof}
 
-\subsection{Oefening 29}
+\subsection{Oefening 32}
 \subsubsection*{(a)}
 Niet waar. Tegenvoorbeeld.\\
 In $V=(\mathbb{R},\mathbb{R},+)$ defini\"eren we $\alpha = \{1\}$ en $\beta = \{2\}$, deze zijn beide vrij in $V$.\\
