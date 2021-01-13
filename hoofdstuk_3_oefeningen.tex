@@ -7,11 +7,11 @@
 \subsubsection*{a)}
 distributiviteit-1 geldt niet.
 \[
-\lambda((x_1,x_2) + (y_1,y_2)  = \lambda(x_1+y_1-1,x_2+y_2-1) = (\lambda x_1+\lambda y_1-\lambda 1,\lambda x_2+\lambda y_2-\lambda 1)
+\lambda((x_1,x_2) + (y_1,y_2)  = \lambda(x_1+x_2-1,y_1+y_2-1) = (\lambda x_1+\lambda x_2-\lambda 1,\lambda y_1+\lambda y_2-\lambda 1)
 \]
 Terwijl de volgende formule ook geldt, maar deze niet gelijk zijn voor bij voorbeeld $\lambda = 2$.
 \[
-\lambda(x_1,x_2) + \lambda(y_1,y_2) = (\lambda x_1+\lambda y_1- 1,\lambda x_2+\lambda y_2-1)
+\lambda(x_1,x_2) + \lambda(y_1,y_2) = (\lambda x_1+\lambda x_2- 1,\lambda y_1+\lambda y_2-1)
 \]
 \subsubsection*{b)}
 distributiviteit-2 geldt niet:\\
@@ -42,8 +42,14 @@ optelling is niet commutatief.
 \]
 
 \subsubsection*{d)}
-Dit lijkt te kloppen.
-
+Distributiviteit-2 geldt niet. 
+\[
+(\lambda_1 + \lambda_2)(x,y) = (\lambda_1 + \lambda_2)x, \frac{y}{\lambda_1 + \lambda_2})
+\]
+\[ \neq \]
+\[
+  (\lambda_1 + \lambda_2)(x,y) = \lambda_1(x,y) + \lambda_2(x,y) = (\lambda_1x, \frac{y}{\lambda_1}) + (\lambda_2x, \frac{y}{\lambda_2}) = (\lambda_1x + \lambda_2x, \frac{y}{\lambda_1} + \frac{y}{\lambda_2}) = ((\lambda_1 + \lambda_2)x, \frac{\lambda_2y + \lambda_1y}{\lambda_1\lambda_2})
+\]
 \subsection{Oefening 2}
 \subsubsection*{a)}
 Deze verzameling vormt de unie van de drie vlakken rond de assen. Dit is geen deelruimte want de optelling is niet intern. Tegenvoorbeeld:
@@ -58,58 +64,51 @@ x = (1,0,1) \in W_2 \text{ en } y = (0,1,1) \in W_2 \text{ maar } x + y = (1,1,2
 
 \subsubsection*{c)}
 $W_3$ is geen deelruimte van $R^3$ want de lineaire combinatie is niet intern.\\
-Tegenvoorbeeld: stel $\lambda = \pi$ en $v = (1,0,0) \in \mathbb{Q}$.
+Tegenvoorbeeld: stel $\lambda = 2$ en $v = (1,0,0)$.
 \[
-\lambda v = \pi (1,0,0) = (\pi,0,0)
+\lambda v = 2 (1,0,0) = (2,0,0) \not \in W_2
 \]
-$\pi$ is geen element van $\mathbb{Q}$.
 
 \subsubsection*{d)}
-$W_4$ is geen deelruimte van $\mathbb{R}^3$. Intu\"itief is dit makkelijk te zien omdat $W_4$ precies een sfeer beschrijft.\\
-Tegenvoorbeeld: stel $v_1 = (1,0,0)$ en $v_2 =(1,0,0)$.
-\[
-v_1 + v_2 = (2,0,0) \not \in W_4
-\]
-
-\subsubsection*{e)}
-$W_5$ is een deelruimte van $\mathbb{R}^{3 \times 3}$. Ze moet aan de 3 eigenschappen voldoen.
+$W_4$ is een deelruimte van $\mathbb{R}^{3 \times 3}$. Ze moet aan de 3 eigenschappen voldoen.
 \begin{itemize}
-\item De nulmatrix $O \in W_5$
-\item $A,B \in W_5 \longrightarrow A+B \in W_5$
+\item De nulmatrix $O \in W_4$
+\item $A,B \in W_5 \longrightarrow A+B \in W_4$
 \[
 \sum\limits_{i=1,j=1}^a (A+B)_{ij} = \sum\limits_{i=1,j=1}^a A_{ij} + \sum\limits_{i=1,j=1}^a B_{ij} = 0+0 = 0
 \]
-\item $ A \in W_5, \lambda \in \mathbb{R} \longrightarrow \lambda A \in W_5$
+\item $ A \in W_4, \lambda \in \mathbb{R} \longrightarrow \lambda A \in W_4$
 \[
 \sum\limits_{i=1,j=1}^a (\lambda A)_{ij} = \lambda \sum\limits_{i=1,j=1}^a A_{ij} = \lambda 0 = 0
 \]
 \end{itemize}
-\subsubsection*{f)}
-$W_6$ is geen deelruimte van $\mathbb{R}^{3}$ omdat de nulmatrix $O \not \in W_6$ aangezien $\det(O) = 0$.
 
-\subsubsection*{g)}
-$W_7$ is een deelruimte van $\mathbb{R}^{3x3}$.
+\subsubsection*{e)}
+$W_5$ is geen deelruimte van $\mathbb{R}^{3x3}$ omdat de nulmatrix $O \not \in W_5$ aangezien $\det(O) = 0$.
+
+\subsubsection*{f)}
+$W_6$ is een deelruimte van $\mathbb{R}^{3x3}$.
 \begin{itemize}
-\item De nulmatrix $O \in W_7$, de nulmatrix is immers ook een symmetrische matrix.
+\item De nulmatrix $O \in W_6$, de nulmatrix is immers ook een symmetrische matrix.
 \item De som van twee symmetrische matrices is ook een symmetrische matrix.
 \item Een symmetrische matrix vermenigvuldigen met een scalar geeft opnieuw een symmetrische matrix.
 \end{itemize}
 
-\subsubsection*{i)}
-$W_9$ is geen deelruimte van $\mathbb{R}^{3\times 3}$. De optelling is namelijk niet intern.
+\subsubsection*{g)}
+$W_7$ %TODO: 3.6 oef 2
+
+
+\subsubsection*{h)}
+$W_{8}$ is geen deelruimte van $f:\mathbb{R}\rightarrow\mathbb{R}$.\\
+Tegenvoorbeeld: we maken een functie $g \in W_{8}$ met $g : \mathbb{R}\rightarrow\mathbb{R} : x \mapsto e^x$.
 \[
-(0,1,0) + (1,0,0) = (1,1,0) \not \in W_9
+(g+g)(0) = g(0) + g(0) = 1+1 = 2 \Longrightarrow (g+g) \not \in W_{8}
 \]
+\subsubsection*{i)}
+$W_9$
 
 \subsubsection*{j)}
-$W_{10}$ is geen deelruimte van $f:\mathbb{R}\rightarrow\mathbb{R}$.\\
-Tegenvoorbeeld: we maken een functie $g \in W_{10}$ met $g : \mathbb{R}\rightarrow\mathbb{R} : x \mapsto e^x$.
-\[
-(g+g)(0) = g(0) + g(0) = 1+1 = 2 \Longrightarrow (g+g) \not \in W_{10}
-\]
-
-\subsubsection*{l)}
-$W_{12}$ is een deelruimte van $\mathbb{R}^{3\times 3}$.\\
+$W_{10}$ is een deelruimte van $\mathbb{R}^{3\times 3}$.\\
 Het is duidelijk dat $0 \in W_{12}$.\\
 Neem $f, g \in W_{12}$ en $\lambda, \mu \in \mathbb{R}$ willekeurig. Omdat $f$ en $g$ integreerbaar zijn, is $\lambda f + \mu g$ integreerbaar.
 \begin{align*}
@@ -117,41 +116,10 @@ Neem $f, g \in W_{12}$ en $\lambda, \mu \in \mathbb{R}$ willekeurig. Omdat $f$ e
   &= \int^1_0 \lambda f(x)dx + \int^1_0 \mu g(x)dx\\
   &= \lambda \int^1_0 f(x)dx + \mu \int^1_0 g(x)dx = \lambda \cdot 0 + \mu \cdot 0 = 0
 \end{align*}
+\subsubsection*{jk}
+$W_{11}$
 
-
-
-\subsection{Oefening 3}% deze oplossing was fout, deze versie is juist
-\textit{Gegeven:}
-\[
-V = \left\{ (x_n)_{n \in \mathbb{N}} \ \middle|\ x_{n+2} = x_{n+1} + x_n \ ,\ \forall n \in \mathbb{N} \right\}
-\]
-\textit{Te bewijzen:}\\
-We moeten aantonen dat $V$ een vectorruimte is. Dit kunnen we het makkelijkst doen door te bewijzen dat $V$ een deelruimte is van alle rijen.
-\begin{proof}
-We gaan de 3 eigenschappen van een deelruimte na.
-\begin{itemize}
-\item $0 \in V$
-\item Zij $x = (x_n)_{n \in \mathbb{N}} \in V$ en $y = (y_n)_{n \in \mathbb{N}} \in V$. We controleren of $(x+y) \in V$.\\
-Voor alle $n \in \mathbb{N}$ geldt:
-\begin{align*}
-(x+y)_{n+2}
-&= x_{n+2} + y_{n+2} \\
-&= x_{n+1} + x_n + y_{n+1} + y_n \\
-&= (x_{n+1} + y_{n+1}) + (x_n + y_n) \\
-&= (x+y)_{n+1} + (x+y)_{n+1}
-\end{align*}
-\item Zij $x = (x_n)_{n \in \mathbb{N}} \in V$ en $\lambda \in \mathbb{R}$. We controleren of $\lambda x \in V$.\\
-Voor alle $n \in \mathbb{N}$ geldt:
-\begin{align*}
-(\lambda x)_{n+2}
-&= \lambda \cdot x_{n+2} \\
-&= \lambda \cdot x_{n+1} + \lambda \cdot x_n \\
-&= (\lambda x)_{n+1} + (\lambda x)_n
-\end{align*}
-\end{itemize}
-\end{proof}
-
-\subsection{Oefening 4}
+\subsection{Oefening 3}
 \underline{Associativiteit:} niet voldaan.\\
 Neem $n=2$ en willekeurige $v,w \in \mathbb{R}^n$ en een willekeurige $x \in \mathbb{R}^n\backslash\{0\}$.
 \begin{align*}
@@ -199,7 +167,7 @@ Zij $v = (1,0,\ldots,0)$.
 1 \cdot v = -v \neq v
 \]
 
-\subsection{Oefening 5}
+\subsection{Oefening 4}
 Nee, $W$ is geen deelruimte van $R[X]_{\le n}$ als $n\ge 1$. Tegenvoorbeeld:\\
 We defini\"eren $f \in W$ en $g \in W$ en tonen aan dat $(f+g) \not \in W$.
 \begin{align*}
@@ -208,7 +176,7 @@ We defini\"eren $f \in W$ en $g \in W$ en tonen aan dat $(f+g) \not \in W$.
 &f+g = x^n - x^n + 1 = 1
 \end{align*}
 
-\subsection{Oefening 6}
+\subsection{Oefening 5}
 \subsubsection*{Gegeven}
 $U$ en $W$ zijn deelruimten van een vectorruimte $(\mathbb{R},V,+)$.
 \subsubsection*{Te Bewijzen}
@@ -269,7 +237,7 @@ $$
 $$
 Dit is een ongeldige matrix en dus bestaat er geen lineaire combinatie zodat de vector $d$ gevormd wordt. De vector behoort dus niet tot de deelruimte.
 
-\subsection{Oefening 8}
+\subsection{Oefening 6}
 We willen $p(X)$ opschrijven als lineaire combinatie van $p_1(X)$, $p_2(X)$, $p_3(X)$, dus $p(X) = \lambda_1 p_1(X) + \lambda_2 p_2(X) + \lambda_2 p_3(X)$.
 Hiervoor lossen we het volgende stelsel op:
 \[
@@ -945,7 +913,7 @@ Dit is juist volgens de definitie van vectorsom en scalaire vermenigvuldiging.
 \subsubsection*{d)}
 $v_3 = (1,1)$
 
-\subsection{Oefening 28}
+\subsection{Oefening 31}
 \textit{Gegeven.}\\
 We defini\"eren  $v_i = (0,0,\ldots,0,0,1,0,0,\ldots)$ waarbij de 1 op de $i$-de plaats staat.
 \[
@@ -976,7 +944,7 @@ v_i \not \in \{f_1,f_2,\ldots,f_n\}
 Dus op plaats $i$ in $x$ zal een 0 komen waardoor je $(1,1,\ldots)$ niet kan vormen.
 \end{proof}
 
-\subsection{Oefening 29}
+\subsection{Oefening 32}
 \subsubsection*{(a)}
 Niet waar. Tegenvoorbeeld.\\
 In $V=(\mathbb{R},\mathbb{R},+)$ defini\"eren we $\alpha = \{1\}$ en $\beta = \{2\}$, deze zijn beide vrij in $V$.\\
