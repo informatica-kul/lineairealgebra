@@ -11,13 +11,13 @@ jobs:
     container: texlive/texlive
     steps:
       - uses: actions/checkout@v2
-      - name: Compile
-        run: |
-          latexmk -pdf
       - name: set env
         run: |
           echo "NOW=v$(date +'%Y%m%d.%H%M%S')" >> $GITHUB_ENV
           echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+      - name: Compile
+        run: |
+          latexmk -pdf
 
       - name: Create Draft Release
         id: create_release
