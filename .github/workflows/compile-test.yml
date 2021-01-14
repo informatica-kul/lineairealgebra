@@ -1,20 +1,46 @@
 name: CI
 
-on: 
+on:
   push:
-    paths:
-    - '**.tex'
-  pull_request:
-    paths:
-    - '**.tex'
+    branches:
+      - master
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
+    container: texlive/texlive
     steps:
       - uses: actions/checkout@v2
       - name: Compile
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: lineaire_algebra_oplossingen.tex
+        run: |
+          latexmk -pdf
+      - name: set env
+        run: |
+          echo "NOW=v$(date +'%Y%m%d.%H%M%S')" >> $GITHUB_ENV
+          echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
+      - name: Create Draft Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.NOW }}
+          release_name: Generated pdf (${{env.DATE}})
+          draft: true
+          prerelease: false
+
+      - uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./lineaire_algebra_oplossingen.pdf
+          asset_name: lineaire_algebra_oplossingen.pdf
+          asset_content_type: application/pdf
+
+      - uses: eregon/publish-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_id: ${{ steps.create_release.outputs.id }}
