@@ -1,5 +1,4 @@
 result*
-*.pdf
 *.swo
 *.swp
 *.fls
@@ -31,3 +30,5 @@ result*
 *.mtc1
 *.out
 *.synctex.gz
+
+lineaire_algebra_oplossingen.pdf

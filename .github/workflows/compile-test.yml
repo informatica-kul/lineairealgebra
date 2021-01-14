@@ -5,12 +5,12 @@ on: [push, pull_request]
 jobs:
   release:
     runs-on: ubuntu-latest
+    container: texlive/texlive
     steps:
       - uses: actions/checkout@v2
       - name: Compile
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: lineaire_algebra_oplossingen.tex
+        run: |
+          latexmk -pdf 
       - name: Create Draft Release
         id: create_release
         uses: actions/create-release@v1
