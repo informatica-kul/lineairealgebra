@@ -1,12 +1,12 @@
 name: CI
 
-on: 
+on:
   push:
     paths:
-    - '**.tex'
+      - "**.tex"
   pull_request:
     paths:
-    - '**.tex'
+      - "**.tex"
 
 jobs:
   build:
@@ -17,4 +17,31 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: lineaire_algebra_oplossingen.tex
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Draft Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: pdf
+          release_name: generated-pdf
+          draft: true
+          prerelease: false
 
+      - uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./lineaire_algebra_oplossingen.pdf
+          asset_name: lineaire_algebra_oplossingen.pdf
+          asset_content_type: application/pdf
+
+      - uses: eregon/publish-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_id: ${{ steps.create_release.outputs.id }}
