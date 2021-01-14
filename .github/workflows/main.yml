@@ -1,12 +1,6 @@
 name: CI
 
-on: 
-  push:
-    paths:
-    - '**.tex'
-  pull_request:
-    paths:
-    - '**.tex'
+on: [push, pull_request]
 
 jobs:
   build:
